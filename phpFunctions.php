@@ -1,12 +1,14 @@
 <?php
-    function showDate($inDate){
-        $date=date_create($inDate);
-        echo date_format($date,"m/d/Y");
+    function showDate(){
+        date_default_timezone_set("America/Chicago");   // sets the date to central US time since server is in EU
+        $date = date("m/d/Y");                          // assign formatted date in $date variable
+        return $date; 
     }// end showDate()
     
-    function showInternationalDate($inDate){
-        $date=date_create($inDate);
-        echo date_format($date,"d/m/Y");
+    function showInternationalDate(){
+        date_default_timezone_set("America/Chicago");   // sets the date to central US time since server is in EU
+        $date = date("d/m/Y");                           // assign formatted date in $date variable
+        return $date; 
     }// end showInternationalDate()
     
     function formatString($inString){
@@ -92,12 +94,12 @@
 
             <p>
                 Create a function that will accept a timestamp and format it into mm/dd/yyyy format.</br>
-                <span><?php showDate("2020-04-13");?></span>
+                <span><?php echo showDate(); ?></span>
             </p>
 
             <p>
                 Create a function that will accept a timestamp and format it into dd/mm/yyyy format to use when working with international dates.</br>
-                <span><?php showInternationalDate("1908-06-25");?></span>
+                <span><?php echo showInternationalDate(); ?></span>
             </p>
 
             <p>
